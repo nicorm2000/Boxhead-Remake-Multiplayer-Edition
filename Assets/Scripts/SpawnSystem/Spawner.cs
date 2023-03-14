@@ -29,7 +29,7 @@ public class Spawner : MonoBehaviour
 
         if (!IsAllEnemyesDeath()) return;
 
-        spawnTimer.Start(0.5f, SpawnEnemiy, 4);
+        spawnTimer.Start(0.5f, SpawnEnemiy, 4,false);
 
     }
 

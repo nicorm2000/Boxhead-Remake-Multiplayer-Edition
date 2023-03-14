@@ -9,11 +9,9 @@ public class Timer
 
     private int currentLoop = 0;
 
-    private bool firstCall = false; 
-
     public System.Action onEndTimer;
 
-    public void Start(float initialTime, System.Action onEndTimer)
+    private void Start(float initialTime, System.Action onEndTimer)
     {
         if (Enabled) return;
         Resume();
@@ -21,7 +19,7 @@ public class Timer
         currentTime = initialTime;
         this.onEndTimer = onEndTimer;
     }
-    public void Start(float initialTime, System.Action onEndTimer, int loops)
+    private void Start(float initialTime, System.Action onEndTimer, int loops)
     {
         if (Enabled) return;
         Start(initialTime, onEndTimer);
@@ -66,5 +64,10 @@ public class Timer
                 currentTime = initialTime;
             }
         }
+    }
+
+    public float GetCurrentValue()
+    {
+        return currentTime;
     }
 }
