@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class UIDebug : MonoBehaviour
 {
-    TextMeshProUGUI scoreDebugText; 
-    TextMeshProUGUI comboDebugText; 
-    TextMeshProUGUI timerDebugText; 
+     [SerializeField] TextMeshProUGUI scoreDebugText;
+     [SerializeField] TextMeshProUGUI comboDebugText;
+     [SerializeField] TextMeshProUGUI timerDebugText; 
 
     void Update()
     {

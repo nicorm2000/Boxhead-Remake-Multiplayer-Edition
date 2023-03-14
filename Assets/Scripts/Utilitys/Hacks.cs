@@ -4,11 +4,11 @@ public class Hacks : MonoBehaviour
 {
     [SerializeField] private uint scoreToAdd;
 
-    void ResetScore()
+    public void ResetScore()
     {
         GameManager.Get().score = 0;
     }
-    void AddScore()
+    public void AddScore()
     {
         GameManager.Get().AddScore(scoreToAdd);
     }

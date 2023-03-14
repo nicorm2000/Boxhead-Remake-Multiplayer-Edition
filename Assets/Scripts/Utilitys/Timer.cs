@@ -59,9 +59,13 @@ public class Timer
             }
             else
             {
-                onEndTimer?.Invoke();
                 currentLoop--;
+                if (currentLoop <= 0)
+                {
+                    Enabled = false;
+                }
                 currentTime = initialTime;
+                onEndTimer?.Invoke();
             }
         }
     }

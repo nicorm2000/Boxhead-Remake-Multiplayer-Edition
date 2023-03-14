@@ -3,6 +3,11 @@ public class Combo
     public uint currentCombo = 1;
     Timer Timer;
 
+    public Combo()
+    {
+        Timer = new Timer();
+    }
+
     void LessCombo()
     {
         currentCombo--;
@@ -15,10 +20,11 @@ public class Combo
     }
     void ResetTimer()
     {
+        Timer.Pause();
         Timer.Start(GameManager.Get().comboProgress.Evaluate(currentCombo), LessCombo, 1, false);
     }
 
-    void Update()
+    public void Update()
     {
         if (currentCombo>1)
         {
