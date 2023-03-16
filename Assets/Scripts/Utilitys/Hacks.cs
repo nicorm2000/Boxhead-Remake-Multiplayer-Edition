@@ -6,10 +6,10 @@ public class Hacks : MonoBehaviour
 
     public void ResetScore()
     {
-        GameManager.Get().score = 0;
+        ScoreSystem.Get().score = 0;
     }
     public void AddScore()
     {
-        GameManager.Get().AddScore(scoreToAdd);
+        ScoreSystem.Get().AddScore(scoreToAdd);
     }
 }

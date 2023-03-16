@@ -9,8 +9,8 @@ public class UIDebug : MonoBehaviour
 
     void Update()
     {
-        scoreDebugText.text = GameManager.Get().score.ToString() + " is the score";
-        comboDebugText.text = GameManager.Get().combo.currentCombo.ToString() + " is the combo";
-        timerDebugText.text = GameManager.Get().combo.GetTimerValue().ToString() + " is the timeToEndCombo";
+        scoreDebugText.text = ScoreSystem.Get().score.ToString() + " is the score";
+        comboDebugText.text = ScoreSystem.Get().combo.currentCombo.ToString() + " is the combo";
+        timerDebugText.text = ScoreSystem.Get().combo.GetTimerValue().ToString() + " is the timeToEndCombo";
     }
 }

@@ -21,7 +21,7 @@ public class Combo
     void ResetTimer()
     {
         Timer.Pause();
-        Timer.Start(GameManager.Get().comboProgress.Evaluate(currentCombo), LessCombo, 1, false);
+        Timer.Start(ScoreSystem.Get().comboProgress.Evaluate(currentCombo), LessCombo, 1, false);
     }
 
     public void Update()

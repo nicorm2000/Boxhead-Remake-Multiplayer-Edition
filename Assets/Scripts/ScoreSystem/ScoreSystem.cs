@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class GameManager : MonoBehaviourSingleton<GameManager>
+public class ScoreSystem : MonoBehaviourSingleton<ScoreSystem>
 {
     public uint score;
     [SerializeField] public Combo combo;
