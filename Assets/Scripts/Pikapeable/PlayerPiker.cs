@@ -18,7 +18,3 @@ public class PlayerPiker : MonoBehaviour
         return ((layerMask.value & (1 << obj.layer)) > 0);
     }
 }
-public interface IPicapeable
-{
-    void Onpick();
-}
