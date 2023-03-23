@@ -1,10 +1,9 @@
 using System;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, IPicapeable
 {
     [SerializeField] PlayerLive live;
-    [SerializeField] InventoryS inv;
     private void Start()
     {
         live = new PlayerLive();
@@ -22,5 +21,11 @@ public class Player : MonoBehaviour
     public void InitCanvasLive(Func<float,float> actionOnLiveChange)
     {
         live.Init(actionOnLiveChange);
+    }
+
+    public void Onpick()
+    {
+        Debug.Log("OnPik");
+        //give life if low or give ammo.
     }
 }
