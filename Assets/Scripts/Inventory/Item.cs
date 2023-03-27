@@ -17,7 +17,7 @@ public class Item
         unlock = true;
     }
 
-    public virtual bool use()
+    public virtual bool use(Vector3 pos, Vector3 dir)
     {
         return false;
     }

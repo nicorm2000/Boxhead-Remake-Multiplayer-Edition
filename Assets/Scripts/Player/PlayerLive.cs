@@ -4,6 +4,8 @@ using UnityEngine;
 public class PlayerLive
 {
     [SerializeField] private int life = 100;
+    [SerializeField] private int maxLife = 100;
+
     [SerializeField] private Func<float,float> OnValueChange = null;
     public void Init(Func<float,float> OnValueChange)
     {
@@ -24,6 +26,15 @@ public class PlayerLive
     public int GetLive()
     {
         return life;
+    }
+    public bool LiveAddWhenLow()
+    {
+        if (life<maxLife)
+        {
+            life = maxLife;
+            return true;
+        }
+        return false;
     }
 }
 public interface IDamageable

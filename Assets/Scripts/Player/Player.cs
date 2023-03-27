@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class Player : MonoBehaviour, IPicapeable
+public class Player : MonoBehaviour, IPicapeable, IDamageable
 {
     [SerializeField] PlayerLive live;
     private void Start()
@@ -26,6 +26,13 @@ public class Player : MonoBehaviour, IPicapeable
     public void Onpick()
     {
         Debug.Log("OnPik");
+        if (live !=null)
+        {
+            if (live.LiveAddWhenLow())
+                return;
+            else
+                Debug.Log("Add Armor");
+        }
         //give life if low or give ammo.
     }
 }
