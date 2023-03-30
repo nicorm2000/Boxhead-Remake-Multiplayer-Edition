@@ -29,6 +29,7 @@ public class Inventory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        items[selectItem].Update();
         if (Input.GetKey(next))
             selectNext();
         if (Input.GetKey(prev))

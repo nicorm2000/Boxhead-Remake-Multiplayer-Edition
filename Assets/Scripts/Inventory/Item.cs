@@ -19,6 +19,8 @@ public abstract class Item
     }
 
     public abstract bool use(Vector3 pos, Vector3 dir);
+
+    public abstract void Update();
     public bool isUnlocked()
     {
         return unlock;
