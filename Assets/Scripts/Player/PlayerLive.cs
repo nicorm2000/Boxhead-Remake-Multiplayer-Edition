@@ -1,6 +1,6 @@
 using System;
 using UnityEngine;
-[SerializeField]
+[Serializable]
 public class PlayerLive
 {
     [SerializeField] private int life = 100;

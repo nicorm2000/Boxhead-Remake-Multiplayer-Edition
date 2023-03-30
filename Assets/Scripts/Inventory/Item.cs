@@ -1,9 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using System;
 
-public class Item
+[Serializable]
+public abstract class Item
 {
+    [SerializeField] protected int bullets;
     [SerializeField] private string name;
     [SerializeField] private bool unlock;
 
@@ -17,10 +18,7 @@ public class Item
         unlock = true;
     }
 
-    public virtual bool use(Vector3 pos, Vector3 dir)
-    {
-        return false;
-    }
+    public abstract bool use(Vector3 pos, Vector3 dir);
     public bool isUnlocked()
     {
         return unlock;
