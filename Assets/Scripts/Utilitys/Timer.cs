@@ -7,7 +7,7 @@ public class Timer
 
     private float currentTime = 0;
 
-    private int currentLoop = 0;
+    private int currentLoop = 1;
 
     public System.Action onEndTimer;
 

@@ -9,19 +9,20 @@ public class Gun : Item
     [SerializeField] private float shootRate;
     private Timer timeToNextShot;
     private bool loockToShoot = true;
-    public Gun(string name, int bullets, int maxDistance, int layerEnemyMask, int damage) : base(name)
+    public Gun(string name, int bullets, int maxDistance, int layerEnemyMask, int damage, int shootRate) : base(name)
     {
         this.bullets = bullets;
         this.maxDistance = maxDistance;
         this.layerEnemyMask = layerEnemyMask;
         this.damage = damage;
+        this.shootRate = shootRate;
         timeToNextShot = new Timer();
         ResetShootDown();
     }
     private void ResetShootDown()
     {
         timeToNextShot.Pause();
-        timeToNextShot.Start(1, () => { loockToShoot = false; }, 1, false);
+        timeToNextShot.Start(shootRate, () => { loockToShoot = false; }, 1, false);
         timeToNextShot.Resume();
     }
     public override void Update()

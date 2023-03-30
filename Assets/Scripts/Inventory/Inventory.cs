@@ -21,8 +21,8 @@ public class Inventory : MonoBehaviour
     void Start()
     {
         items = new List<Item>();
-        items.Add(new Gun("Pistol",int.MaxValue,int.MaxValue,GameManager.Get().damageableLayer,1));
-        items.Add(new Gun("Uzi",200,int.MaxValue, GameManager.Get().damageableLayer,1));
+        items.Add(new Gun("Pistol",int.MaxValue,int.MaxValue,GameManager.Get().damageableLayer,1,1));
+        items.Add(new Gun("Uzi",200,int.MaxValue, GameManager.Get().damageableLayer,1,1));
         items[0].Unlock();
     }
 
