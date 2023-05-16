@@ -4,12 +4,12 @@ using UnityEngine;
 public class PlayerPiker : MonoBehaviour
 {
     [SerializeField] private LayerMask Pickapeablelayer;
+    [SerializeField] private Player player;
     private void OnTriggerEnter(Collider other)
     {
         if (IsInLayerMask(other.gameObject,Pickapeablelayer))
         {
-            IPicapeable pic = this.gameObject.GetComponent<IPicapeable>();
-            if (pic != null ) { pic.Onpick(); Destroy(other.gameObject); }
+             player.Onpick(); Destroy(other.gameObject);
         }
     }
 
