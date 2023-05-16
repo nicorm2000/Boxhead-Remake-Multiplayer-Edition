@@ -9,7 +9,8 @@ public class PlayerLive
     [SerializeField] private Func<float,float> OnValueChange = null;
     public void Init(Func<float,float> OnValueChange)
     {
-        OnValueChange = this.OnValueChange;
+        this.OnValueChange = OnValueChange;
+        OnValueChange?.Invoke(life);
     }
     public void TakeDamage(int less)
     {
