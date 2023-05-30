@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,6 +7,7 @@ enum InventoryItems
 {
     PISTOL,
     UZI,
+    MACHINEGUN,
     MAX
 }
 
@@ -21,18 +23,21 @@ public class Inventory : MonoBehaviour
     void Start()
     {
         items = new List<Item>();
-        items.Add(new Gun("Pistol",int.MaxValue,int.MaxValue,GameManager.Get().damageableLayer,1,1));
-        items.Add(new Gun("Uzi",200,int.MaxValue, GameManager.Get().damageableLayer,1,1));
-        items[0].Unlock();
+        items.Add(new Gun(Enum.GetName(typeof (InventoryItems),(int)InventoryItems.PISTOL),int.MaxValue,int.MaxValue,GameManager.Get().damageableLayer,1,1));
+        items.Add(new Gun(Enum.GetName(typeof(InventoryItems), (int)InventoryItems.UZI), 200,int.MaxValue, GameManager.Get().damageableLayer,1,0.1f));
+        items.Add(new Gun(Enum.GetName(typeof(InventoryItems), (int)InventoryItems.MACHINEGUN), int.MaxValue, int.MaxValue, GameManager.Get().damageableLayer, 1, 0.0001f));
+        items[(int)InventoryItems.PISTOL].Unlock();
+        items[(int)InventoryItems.UZI].Unlock();
+        items[(int)InventoryItems.MACHINEGUN].Unlock();
     }
 
     // Update is called once per frame
     void Update()
     {
         items[selectItem].Update();
-        if (Input.GetKey(next))
+        if (Input.GetKeyDown(next))
             selectNext();
-        if (Input.GetKey(prev))
+        if (Input.GetKeyDown(prev))
             SelectPrev();
         if (Input.GetKey(use))
             items[selectItem].use(transform.position,transform.forward);
@@ -41,7 +46,7 @@ public class Inventory : MonoBehaviour
     void selectNext()
     {
         selectItem++;
-        if (selectItem>=(int)InventoryItems.MAX)
+        if (selectItem >= (int)InventoryItems.MAX)
         {
             selectItem = (int)InventoryItems.PISTOL;
         }
@@ -53,7 +58,7 @@ public class Inventory : MonoBehaviour
     void SelectPrev()
     {
         selectItem--;
-        if (selectItem <= (int)InventoryItems.PISTOL)
+        if (selectItem < (int)InventoryItems.PISTOL)
         {
             selectItem = (int)InventoryItems.MAX-1;
         }

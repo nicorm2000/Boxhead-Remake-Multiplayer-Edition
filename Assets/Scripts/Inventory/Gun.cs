@@ -9,7 +9,7 @@ public class Gun : Item
     [SerializeField] private float shootRate;
     private Timer timeToNextShot;
     private bool loockToShoot = true;
-    public Gun(string name, int bullets, int maxDistance, int layerEnemyMask, int damage, int shootRate) : base(name)
+    public Gun(string name, int bullets, int maxDistance, int layerEnemyMask, int damage, float shootRate) : base(name)
     {
         this.bullets = bullets;
         this.maxDistance = maxDistance;
